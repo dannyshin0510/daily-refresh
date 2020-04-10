@@ -14,8 +14,12 @@ response = requests.request("GET", url+"/cases", params=querystring)
 data=json.loads(response.text)
 
 # print(data["Ontario"]['confirmed'], data["All"])
-print(data)
-canCases=str(data["All"]["confirmed"])
-canDeaths=str(data["All"]["deaths"])
-torCases=str(data["Ontario"]["confirmed"])
-torDeaths=str(data["Ontario"]["deaths"])
+# print(data)
+
+def commaPlacer(num):
+    return ("{:,}".format(num))
+
+canCases=commaPlacer(data["All"]["confirmed"])
+canDeaths=commaPlacer(data["All"]["deaths"])
+torCases=commaPlacer(data["Ontario"]["confirmed"])
+torDeaths=commaPlacer(data["Ontario"]["deaths"])
