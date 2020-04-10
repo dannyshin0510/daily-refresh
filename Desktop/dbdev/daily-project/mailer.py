@@ -12,8 +12,9 @@ msg['To'] = "shindannybms@gmail.com"
 
 path = Path(__file__).parent / "template\mail.html"
 htmlFile = path.open('r', encoding="utf-8")
-source_code = htmlFile.read()
+source_code = str(htmlFile.read())%(main.number)
 htmlFile.close()
+
 msg.add_alternative(str(source_code), subtype='html')
 
 def sendEmail(message):
@@ -22,12 +23,9 @@ def sendEmail(message):
         server.ehlo()
         server.starttls()
         server.login(config.EMAIL_ADDRESS, config.PASSWORD)
-        # message = 'Subject: {}\n\n{}'.format(subject, msg)
         server.send_message(message)
         server.quit()
-        print("Email sent successfully")
+        print("SUCCESS: Notification sent successfully")
     except:
-        print("Email failed to send")
-
-
+        print("ERROR: Notification failed to send")
 sendEmail(msg)
