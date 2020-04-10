@@ -7,12 +7,12 @@ from pathlib import Path
 msg = EmailMessage()
 msg['Subject'] = "Daily Alerts"
 msg['From'] = config.EMAIL_ADDRESS
-msg['To'] = "shindannybms@gmail.com"
+msg['To'] = config.EMAIL_DESTINATIONS
 
 
 path = Path(__file__).parent / "template\mail.html"
 htmlFile = path.open('r', encoding="utf-8")
-source_code = str(htmlFile.read())%(main.number)
+source_code = str(htmlFile.read())%(main.canCases, main.canDeaths, main.torCases, main.torDeaths)
 htmlFile.close()
 
 msg.add_alternative(str(source_code), subtype='html')
@@ -28,4 +28,6 @@ def sendEmail(message):
         print("SUCCESS: Notification sent successfully")
     except:
         print("ERROR: Notification failed to send")
+
+# execution of program
 sendEmail(msg)
