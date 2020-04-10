@@ -14,3 +14,4 @@ response = requests.request("GET", url+"/cases", params=querystring)
 data=json.loads(response.text)
 
 print(data["Ontario"]['confirmed'], data["All"])
+number=data["Ontario"]["confirmed"]
