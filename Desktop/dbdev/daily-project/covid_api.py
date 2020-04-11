@@ -30,10 +30,10 @@ print(canHistory)
 print(canHistory[str(nowDate)])
 print(canHistory[str(nowDate-datetime.timedelta(days=1))])
 print(canHistory[str(nowDate-datetime.timedelta(days=2))])
-todayDiff=canHistory[str(nowDate-datetime.timedelta(days=1))]-canHistory[str(nowDate)]
-yesterdayDiff=canHistory[str(nowDate-datetime.timedelta(days=2))]-canHistory[str(nowDate-datetime.timedelta(days=1))]
+todayDiffCan = canHistory[str(nowDate)] - canHistory[str(nowDate-datetime.timedelta(days=1))]
+yesterdayDiffCan=canHistory[str(nowDate-datetime.timedelta(days=1))]-canHistory[str(nowDate-datetime.timedelta(days=2))]
 canRate=""
-if (yesterdayDiff>=todayDiff):
+if (yesterdayDiffCan>=todayDiffCan):
     canRate="increased"
 else:
     canRate="decreased"
@@ -45,10 +45,10 @@ print(ontHistory)
 print(ontHistory[str(nowDate)])
 print(ontHistory[str(nowDate-datetime.timedelta(days=1))])
 print(ontHistory[str(nowDate-datetime.timedelta(days=2))])
-todayDiff=ontHistory[str(nowDate-datetime.timedelta(days=1))]-ontHistory[str(nowDate)]
-yesterdayDiff=ontHistory[str(nowDate-datetime.timedelta(days=2))]-ontHistory[str(nowDate-datetime.timedelta(days=1))]
+todayDiffOnt = ontHistory[str(nowDate)] - ontHistory[str(nowDate-datetime.timedelta(days=1))]
+yesterdayDiffOnt=ontHistory[str(nowDate-datetime.timedelta(days=1))]-ontHistory[str(nowDate-datetime.timedelta(days=2))]
 ontRate=""
-if (yesterdayDiff>=todayDiff):
+if (yesterdayDiffOnt<=todayDiffOnt):
     ontRate="increased"
 else:
     ontRate="decreased"
