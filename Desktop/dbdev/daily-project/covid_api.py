@@ -1,5 +1,4 @@
 import requests
-import datetime
 import json
 
 # https://github.com/M-Media-Group/Covid-19-API - all the info for API 

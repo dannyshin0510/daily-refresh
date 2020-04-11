@@ -4,6 +4,7 @@ import covid_api
 from email.message import EmailMessage
 from pathlib import Path
 ALARM_ACTIVATED = True
+
 def sendEmail(message):
     try:
         server = smtplib.SMTP('smtp.gmail.com:587')
