@@ -3,6 +3,7 @@
 The following application notifies users on the various insights and progressions of chosen subjects.
 As an example, COVID-19 live tracker is included to illustrate the functionality of the notifier.
 
+
 **TO USE:**
 Create a config.py file in /daily-project with the following format:
 
