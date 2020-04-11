@@ -3,7 +3,7 @@ import json
 
 # https://github.com/M-Media-Group/Covid-19-API - all the info for API 
 
-# Import the response as text, change  it into json, and  query for Ontario
+# Import the response as text, change  it into json, and query for Canada and Ontario
 
 url = "https://covid-api.mmediagroup.fr/v1"
 

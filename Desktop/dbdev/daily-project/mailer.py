@@ -3,6 +3,7 @@ import config
 import covid_api
 from email.message import EmailMessage
 from pathlib import Path
+ALARM_ACTIVATED = True
 
 def sendEmail(message):
     try:
@@ -31,3 +32,18 @@ for destination in config.EMAIL_DESTINATIONS:
     msg = EmailMessage()
     createMessage(destination, msg)
     sendEmail(msg)
+
+print(datetime.datetime.now())
+
+# while (ALARM_ACTIVATED):
+#     if (alarmTime == datetime.datetime.now()):
+#         print("MESSAGE: Alarm has been Triggered")
+#         for destination in config.EMAIL_DESTINATIONS:
+#             msg = EmailMessage()
+#             createMessage(destination, msg)
+#             sendEmail(msg)
+#         break
+# print("completed")
+        
+
+    
