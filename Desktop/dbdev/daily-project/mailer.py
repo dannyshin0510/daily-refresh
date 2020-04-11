@@ -25,11 +25,11 @@ def createMessage(destination, msg):
     msg['To'] = destination
     path = Path(__file__).parent / "template\mail.html"
     htmlFile = path.open('r', encoding="utf-8")
-    source_code = str(htmlFile.read())%(covid_api.canCases, covid_api.canDeaths, covid_api.torCases, covid_api.torDeaths)
+    source_code = str(htmlFile.read())%(covid_api.canCases, covid_api.canDeaths,  covid_api.canRate, covid_api.ontCases, covid_api.ontDeaths, covid_api.ontRate)
     htmlFile.close()
     msg.add_alternative(str(source_code), subtype='html')
 
-# execution of program
+# ALL EXECUTION
 alarmHour = 20
 alarmMin = 36
 print("ALARM: active...")
@@ -43,6 +43,11 @@ while (ALARM_ACTIVATED):
             sendEmail(msg)
         break
 print("Operation Completed")
-        
+
+# SINGLE EXECUTION
+# for destination in config.EMAIL_DESTINATIONS:
+#     msg = EmailMessage()
+#     createMessage(destination, msg)
+#     sendEmail(msg)
 
     
