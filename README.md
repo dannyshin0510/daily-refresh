@@ -7,8 +7,8 @@ As an example, COVID-19 live tracker is included to illustrate the functionality
 Create a config.py file in /daily-project with the following format:
 
 
-EMAIL_ADDRESS = "<<FROM_EMAIL>>"
-PASSWORD = "<<EMAIL_PASSWORD>>"
+EMAIL_ADDRESS = "<<FROM_EMAIL>>" \
+PASSWORD = "<<EMAIL_PASSWORD>>" \
 EMAIL_DESTINATIONS = ["<<DESTINATION_EMAIL>>"]
 
 
