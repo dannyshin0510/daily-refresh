@@ -4,7 +4,7 @@ The following application notifies users on the various insights and progression
 As an example, COVID-19 live tracker is included to illustrate the functionality of the notifier.
 
 **TO USE:**
-Create a config.py dile in /daily-project with the following format:
+Create a config.py file in /daily-project with the following format:
 
 
 EMAIL_ADDRESS = "<<FROM_EMAIL>>"
